@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- Alex Hicks - 991 414 949 -->
+<html>
+<head>
+	<title>Assignment 3 - hicksal</title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="_css/jquery.mobile.css"/>
+	<link rel="stylesheet" href="_css/hicksal.css"/>
+	<link rel="stylesheet" href="_css/main.css"/>
+	
+	<script src="_js/jquery.js"></script>
+	<script src="_js/jquery.mobile.js"></script>		
+	<script src="_js/script.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
+</head>
+
+<body>
+<!-- HOME PAGE -->
+<div id="mainpage" data-role="page">
+	<header data-role="header">
+	</header>
+	
+	<section class="ui-content" role="main">
+	
+		<section id="weather">
+		</section>
+		
+		<section id="weatherGrid" class="ui-grid-b">
+			<div class="ui-block-a">
+				<a href="#wind" id="windButton" class="ui-btn ui-btn-icon-right ui-icon-wind">Wind</a>	
+			</div>
+			<div class="ui-block-b">
+				<a href="#atmosphere" id="atmosphereButton" class="ui-btn ui-btn-icon-right ui-icon-atmosphere">Atmosphere</a>
+			</div>
+			<div class="ui-block-c">
+				<a href="#astronomy" id="astronomyButton" class="ui-btn ui-btn-icon-right ui-icon-astronomy">Astronomy</a>
+			</div>
+		</section>
+		
+		<div>
+			<a id="displayMap" class="ui-btn">Display/Hide Map</a>
+		</div>	
+		<div>
+			<a id="dailyBtn" href="#daily" class="ui-btn">Daily Weather Page</a>
+		</div>
+		<div>
+			<a id="formBtn" href="#formpage" class="ui-btn">Form Page</a>
+		</div>
+		
+		<section id="wind" class="mainPanel" data-role="panel" data-display="overlay" data-position="right">
+		</section>
+		
+		<section id="atmosphere" class="mainPanel" data-role="panel" data-display="overlay" data-position="right">
+		</section>
+		
+		<section id="astronomy" class="mainPanel" data-role="panel" data-display="overlay" data-position="right">
+		</section>
+		
+		<h5 id="mapTitle"></h5>
+		<div id="mapContainer">
+			<div id="map_canvas" style="height:350px; width:420px;"></div>
+		</div>
+	</section>
+	
+	<footer class="ui-grid-b" data-role="footer">
+		<div id="aboutLink" class="ui-block-a"></div>
+		<div id="sheridanLink" class="ui-block-b"></div>
+		<div id="nhlLink" class="ui-block-c"></div>
+	</footer>
+</div> <!-- End of Home page -->
+
+
+<!--  About Me page -->
+<div id="about" data-role="page">
+	<header data-role="header">
+	</header>
+	
+	<section class="ui-content" data-role="main">
+		<section id="aboutGrid" class="ui-grid-a">
+			<div id="aboutInfo" class="ui-block-a"></div>
+			<div id="aboutPic" class="ui-block-b"></div>
+		</section>
+	</section>
+	
+	<footer>
+		<div id="homeLink">
+			<a href="#mainpage" class="ui-btn ui-mini ui-btn-icon-top ui-icon-back">Go Back</a>
+		</div>
+	</footer>
+</div> <!-- End of About Page -->
+
+
+<!-- Daily Weather Page -->
+<div id="daily" data-role="page">
+	<header data-role="header"></header>
+	<section class="ui-content" role="main">
+		<div id="dailyGrid" data-role="collapsible-set" class="ui-grid-a">			
+		</div>
+		<a href="#mainpage" class="ui-btn ui-mini ui-btn-icon-top ui-icon-back">Go Back</a>
+	</section>
+</div><!-- End of Daily Weather Page -->
+
+
+<!-- Form Page -->
+<div id="formpage" data-role="page">
+	<header data-role="header">
+		<h3>Form Page</h3>
+	</header>
+	
+	<section class="ui-content">
+		<form>
+			<label for="email">Please enter your email address: </label>
+			<input id="email" name="email" type="email" placeholder="someone@example.com" size="35"><br/>
+			
+			<label for="commentType">Please select the type of your comment/question:</label>
+			<select id="commentType">
+				<option value="default" selected>-- select an option --</option>
+				<option id="op-tech" value="technical">Technical</option>
+				<option id="op-gen" value="general">General</option>
+				<option id="op-com" value="comment">Comment</option>
+			</select><br/>
+			
+			<label for="comments">Enter your comment or question here: </label>
+			<textarea id="comments" rows="8" cols="50" name="comments"></textarea><br/>
+			
+			<div id="btnGrid" class="ui-grid-a">
+				<div class="ui-block-a">
+					<a href="#lastComment" data-rel="popup" id="last" class="ui-btn ui-btn-icon-right ui-icon-comment" data-position-to="window">Display Last Comment</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#submitted" data-rel="popup" id="submit" class="ui-btn ui-icon-action ui-btn-icon-right" data-position-to="window">Submit</a>
+				</div>
+			</div>
+		</form>
+	
+		<a href="#mainpage" class="ui-btn ui-mini ui-btn-icon-top ui-icon-back">Go Back</a>
+	</section>
+	
+	<div id="submitted" data-role="popup" class="ui-content">
+	</div>	
+	<div id="lastComment" data-role="popup" class="ui-content">
+	</div>
+</div>
+</body>
+</html>
